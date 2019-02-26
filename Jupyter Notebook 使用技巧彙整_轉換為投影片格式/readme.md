@@ -1,3 +1,9 @@
+整理 [Yao-Jen Kuo](https://medium.com/@tonykuoyj) 在 Medium 上發表關如何在 jupyter notebook環境下, 運用 nbconvert 將 .ipynb 輸出為適合簡報的投影片格式的文章。
+內容摘要如下。
+
+文章連結：
+[Link](https://medium.com/pyradise/jupyter-notebook-tricks-slideshows-a057a39c0a23)
+
 - [1. 播放模式](#1-%E6%92%AD%E6%94%BE%E6%A8%A1%E5%BC%8F)
 - [2. 攜行模式](#2-%E6%94%9C%E8%A1%8C%E6%A8%A1%E5%BC%8F)
 - [3. 輸出為 PDF](#3-%E8%BC%B8%E5%87%BA%E7%82%BA-pdf)
