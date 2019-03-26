@@ -6,7 +6,8 @@
 - [3. 輸出為 PDF](#3-%E8%BC%B8%E5%87%BA%E7%82%BA-pdf)
 - [4. 在簡報時進行 Live Coding](#4-%E5%9C%A8%E7%B0%A1%E5%A0%B1%E6%99%82%E9%80%B2%E8%A1%8C-live-coding)
 - [5. Slide 種類](#5-slide-%E7%A8%AE%E9%A1%9E)
-- [6. 延伸閱讀](#6-%E5%BB%B6%E4%BC%B8%E9%96%B1%E8%AE%80)
+- [6. 使用 nbc2slidesp.bat 簡化轉換流程](#6-%E4%BD%BF%E7%94%A8-nbc2slidespbat-%E7%B0%A1%E5%8C%96%E8%BD%89%E6%8F%9B%E6%B5%81%E7%A8%8B)
+- [7. 延伸閱讀](#7-%E5%BB%B6%E4%BC%B8%E9%96%B1%E8%AE%80)
 
 
 ## 1. 播放模式
@@ -16,11 +17,11 @@ jupyter nbconvert my-nb-slide.ipynb --to slides --post serve
 
 
 ## 2. 攜行模式
-* ### 將 reveal.js 下載至資料夾（透過 Git）
+* ### 將 reveal.js 下載至專案資料夾（透過 Git）
 ```
 git clone https://github.com/hakimel/reveal.js.git
 ```
-* ### 轉換為 HTML 投影片
+* ### 將專案資料夾中的 notebook 轉換為 HTML 投影片
 ```      
 jupyter nbconvert my-nb-slide.ipynb --to slides --reveal-prefix reveal.js
 ```
@@ -55,7 +56,19 @@ conda install -c conda-forge rise
 * Skip：輸出時略過該張投影片
 * Notes：輸出時略過該張投影片並作為備忘錄講稿
 
-## 6. 延伸閱讀
+
+## 6. 使用 nbc2slidesp.bat 簡化轉換流程
+```{cmd}
+IF NOT EXIST reveal.js (
+  git clone https://github.com/hakimel/reveal.js.git
+)
+jupyter nbconvert %1 --to slides --reveal-prefix reveal.js
+explorer %~n1.slides.html
+
+pause
+```
+
+## 7. 延伸閱讀
 * https://nbconvert.readthedocs.io/en/latest/index.html
 * https://github.com/hakimel/reveal.js
 * https://damianavila.github.io/RISE/
